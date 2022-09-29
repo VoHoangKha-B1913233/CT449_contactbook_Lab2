@@ -108,7 +108,7 @@ exports.findAllFavorite = async (req, res, next) => {
     try {
         const contactService = new ContactService(MongoDB.client);
         const document = await contactService.findAllFavorite();
-        return res.send(documents);
+        return res.send(document);
     } catch (error){
         return next(new ApiError(
             500,
